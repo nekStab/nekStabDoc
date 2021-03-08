@@ -84,9 +84,9 @@ html_theme = 'sphinx_pdj_theme'
 htm_theme_path = [sphinx_pdj_theme.get_html_theme_path()]
 
 # sets the darker appearence
-html_theme_options = {
-    'style': 'darker'
-}
+#html_theme_options = {
+#    'style': 'darker'
+#}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
