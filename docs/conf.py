@@ -79,10 +79,11 @@ pygments_style = None
 # a list of builtin themes.
 #
 #html_theme = 'alabaster'
-import sphinx_pdj_theme
-html_theme = 'sphinx_pdj_theme'
-htm_theme_path = [sphinx_pdj_theme.get_html_theme_path()]
+html_theme = 'sphinx_rtd_theme'
 
+#import sphinx_pdj_theme
+#html_theme = 'sphinx_pdj_theme'
+#htm_theme_path = [sphinx_pdj_theme.get_html_theme_path()]
 # sets the darker appearence
 #html_theme_options = {
 #    'style': 'darker'
