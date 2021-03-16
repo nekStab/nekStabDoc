@@ -1,1 +1,1 @@
-# Documentation for nekStab toolbox
+# https://ricardofrantz.github.io/nekStabDoc/en/master/

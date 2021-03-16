@@ -10,7 +10,4 @@ For a user brand new to Nek5000, we strongly recommend beginning with the Period
 .. toctree::
   :maxdepth: 1
 
-  tutorials/perhill
-  tutorials/conjht
-  tutorials/neknek
-
+  tutorials/1cyl
