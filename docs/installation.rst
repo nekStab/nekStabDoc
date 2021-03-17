@@ -30,10 +30,20 @@ Compile Nek5000 tools:
     cd ~/nekStab/Nek5000/tools
     ./maketools all
 
-| 
-|  Outputs
 
-| ``javascript building genmap ... done building gencon ... done building genbox ... done building n2to3 ... done building reatore2 ... done building nekmerge ... done building prenek ... done building postnek ... done building nekamg_setup ... done building gmsh2nek ... done building exo2nek ... done building cgns2nek ... done``
+Outputs
+| ``building genmap ... done
+    building gencon ... done
+    building genbox ... done
+    building n2to3 ... done
+    building reatore2 ... done
+    building nekmerge ... done 
+    building prenek ... done 
+    building postnek ... done 
+    building nekamg_setup ... done 
+    building gmsh2nek ... done
+    building exo2nek ... done 
+    building cgns2nek ... done``
 | 
 
 Move to a specific example, for instance: **cd examples/1cyl**

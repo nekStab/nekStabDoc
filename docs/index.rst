@@ -50,14 +50,6 @@ Useful links
    installation
    parameters
    adapting
-..   quickstart
-..   faq
-..   tutorials
-..   problem_setup
-..   theory
-..   appendix
-   references
-
    autodoc
 
 Indices and tables

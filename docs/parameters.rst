@@ -4,35 +4,31 @@ Parameters
 Current form of input via uparams 
 --------------------------------- 
 
--  uparam(1) = mode (0: DNS, 1:stabilization, 3:stability)
+-  uparam(1) = computation mode 
 
--  uparam(2) = optional restart vector for stability
+               0: DNS, 
+               1:stabilization, 
+               3   :  stability with direct,
+               3.2:stability with adjoint,
+               3.2:stability with transientGrowth
+               
+-  uparam(2) = restart vector for stability (optional)
 
 -  uparam(3) = stabilzation technique (1:SFD)
 
--  uparam(4) = frequency cuttor of forcing frequency
+-  uparam(4) = target mode estimated Strouhal
 
--  uparam(5) = gain or forcing amplitude
+-  uparam(5) = target mode estimated growth rate
 
 -  uparam(6) =
 
 -  uparam(7) =
 
--  uparam(8) =
+-  uparam(8) = sponge side left length (e.g. 1)
 
--  uparam(9) =
+-  uparam(9) = sponge side right length (e.g. 5)
 
--  uparam(10): sponge strenght (>0 to activate)
-
-
-uparam(1) = 0 - > Direct numerical simulation
-
-uparam(1) = 3.- > Direct mode computation
-
-uparam(1) = 3.2 - > Adjoint mode computation
-
-uparam(1) = 3.3 - > Direct-adjoint mode computation for transient growth
-analysis
+-  uparam(10) = sponge strenght (>0 to activate e.g. 1.7)
 
 
 Future update via parser 
