@@ -126,7 +126,7 @@ In the viewing window one can visualize the flow-field as depicted in
 
 .. _fig:hill_flow:
 
-.. figure:: hill_flow_v3.png
+.. figure:: 
     :align: center
     :figclass: align-center
     :alt: per_flow

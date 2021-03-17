@@ -1,4 +1,4 @@
-INSTALLING AND RUNNING
+Installing and running
 ======================
 
 Fist install code dependencies if running with GCC

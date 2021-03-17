@@ -12,9 +12,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
@@ -115,13 +115,18 @@ html_static_path = ['_static']
 ## -- Options for Sphinx-Fortran ---------------------------------------------
 
 # List of possible extensions in the case of a directory listing
-fortran_ext = ['f', 'f90', 'F90', 'f95', 'F95']
-
+fortran_ext = ['*.f'] #, 'f90', 'F90', 'f95', 'F95']
 # This variable must be set with file pattern, like "*.f90", or a list of them. 
 # It is also possible to specify a directory name; in this case, all files than 
 # have an extension matching those define by the config variable `fortran_ext` 
 # are used.
-fortran_src = [ os.path.abspath('./src/'),  ]
+fortran_src = [ os.path.abspath('../core/'),  ]
+#fortran_encoding = ["utf8"]
+#fortran_subsection_type = ["rubric"]
+# "rubric" (default) : use directive rubric (lightweight title in bold).
+# "title" : uses a conventional title (text with underlining, whose character is defined by u fortran_title_underline).
+
+#sys.path.insert(0, os.path.abspath('.'))
 
 # Indentation string or length (default 4). If it is an integer, 
 # indicates the number of spaces.
@@ -200,13 +205,6 @@ epub_title = project
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
-
-
-# -- Extension configuration -------------------------------------------------
-
-# add sourcecode to path
-import sys, os
-sys.path.insert(0, os.path.abspath('../src'))
  
 ############################
 # SETUP THE RTD LOWER-LEFT #

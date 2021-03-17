@@ -1,6 +1,6 @@
 
-ADAPTING YOUR EXISTING CASE TO NEKSTAB
-======================================
+Adapting your case
+==================
 
 we recommend converting old *.rea* files to **.par** + **.re2** and
 **.ma2**
@@ -19,7 +19,7 @@ in your *.usr*, add to **userchk** and **userf **\ respectively:
     call nekStab
     call nekStab_forcing(ffx,ffy,ffz,ix,iy,iz,ieg)
 
-PROGRAMMING BEST PRACTICES
+Programming best practices
 ==========================
 
     The best style is consistent style!
