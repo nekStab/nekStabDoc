@@ -30,12 +30,12 @@ _Nek5000 GitHub: https://github.com/Nek5000/Nek5000
    installation
    parameters
    adapting
-..   quickstart
-..   faq
+   quickstart
+   faq
    tutorials
-..   problem_setup
-.. theory
-..   appendix
+   problem_setup
+   theory
+   appendix
    references
 
    autodoc
