@@ -43,6 +43,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    'sphinxfortran.fortran_domain',
+    'sphinxfortran.fortran_autodoc',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -277,3 +279,16 @@ html_context['github_user'] = 'ricardofrantz'
 html_context['github_repo'] = 'nekStabDoc'
 html_context['github_version'] = 'master/docs/'
  
+## -- Options for Sphinx-Fortran ---------------------------------------------
+# List of possible extensions in the case of a directory listing
+fortran_ext = ['f', 'f90', 'F90', 'f95', 'F95']
+
+# This variable must be set with file pattern, like "*.f90", or a list of them. 
+# It is also possible to specify a directory name; in this case, all files than 
+# have an extension matching those define by the config variable `fortran_ext` 
+# are used.
+fortran_src = [ os.path.abspath('../src/'),  ]
+
+# Indentation string or length (default 4). If it is an integer, 
+# indicates the number of spaces.
+fortran_indent = 4
