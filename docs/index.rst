@@ -7,7 +7,7 @@ Synopsis
 nekStab (nek Stability) is an open-source toolbox for massively-parallel eigenvalue and base flow computation of fluid flows developed for the Nek500 solver.
 It aims at solving any fluid flow of an incompressible, Newtonian fluid that can benefit from a Krylov-Schuer eigensolver.
 It supports natively 2D and 3D meshes with all sorts of boundary conditions and optional scalar transport equations.
-It aims to help users and developers ... .
+It aims to help users and developers ...
 
 References
 ---------
