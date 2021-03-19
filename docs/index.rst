@@ -45,7 +45,8 @@ Useful links
 .. _`Suggestions for new features and bug report`: https://github.com/ricardofrantz/nekStab/issues
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
+   :caption: Contents:
 
    installation
    parameters
