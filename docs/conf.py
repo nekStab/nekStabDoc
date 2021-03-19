@@ -121,7 +121,7 @@ fortran_ext = ['*.f'] #, 'f90', 'F90', 'f95', 'F95']
 # have an extension matching those define by the config variable `fortran_ext` 
 # are used.
 
-
+import os, sys
 fortran_src = [ os.path.abspath('../core'),  ]
 #fortran_encoding = ["utf8"]
 #fortran_subsection_type = ["rubric"]
@@ -211,8 +211,7 @@ epub_exclude_files = ['search.html']
 ############################
 # SETUP THE RTD LOWER-LEFT #
 ############################
-import sys, os
-sys.path.insert(0, os.path.abspath('../src'))
+sys.path.insert(0, os.path.abspath('../core'))
 
 try:
    html_context
