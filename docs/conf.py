@@ -281,7 +281,7 @@ html_context['github_version'] = 'master/docs/'
 # are used.
 
 # import os, sys
-#fortran_src = [ os.path.abspath('../core'),  ]
+fortran_src = [ os.path.abspath('../core'),  ]
 # #fortran_encoding = ["utf8"]
 # #fortran_subsection_type = ["rubric"]
 # # "rubric" (default) : use directive rubric (lightweight title in bold).
@@ -291,5 +291,5 @@ html_context['github_version'] = 'master/docs/'
 
 # # Indentation string or length (default 4). If it is an integer, 
 # # indicates the number of spaces.
-#fortran_indent = 4
+fortran_indent = 4
  
