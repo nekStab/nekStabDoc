@@ -1,7 +1,5 @@
-nekStab Documentation
+Home
 ==============================================
-<<<<<<< HEAD
-=======
 
 Synopsis
 --------
@@ -35,8 +33,6 @@ J.-Ch. Loiseau, S. Cherubini, J.-Ch. Robinet and E. Leriche. "Influence of the s
 2014
 J.-Ch. Loiseau, J.-Ch. Robinet, S. Cherubini and E. Leriche. "Investigation of the roughness-induced transition: global stability analyses and direct numerical simulations". Journal of Fluid Mechanics, Volume 760, pp 175-211 (2014). [PDF]
 
-
-
 Useful links
 ------------
 
@@ -45,20 +41,17 @@ Useful links
 
 .. _`View on GitHub`: https://github.com/ricardofrantz/nekStab
 .. _`Suggestions for new features and bug report`: https://github.com/ricardofrantz/nekStab/issues
->>>>>>> parent of fdbcf64... update
+
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-<<<<<<< HEAD
-=======
    installation
    parameters
    adapting
    autodoc
 
->>>>>>> parent of fdbcf64... update
 Indices and tables
 ==================
 
