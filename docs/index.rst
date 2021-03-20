@@ -1,5 +1,5 @@
 nekStab
-==============================================
+=======
 
 Synopsis
 --------
@@ -9,21 +9,17 @@ It aims at solving any fluid flow of an incompressible, Newtonian fluid that can
 It supports natively 2D and 3D meshes with all sorts of boundary conditions and optional scalar transport equations.
 It aims to help users and developers ...
 
-
 Useful links
 ------------
-
-* `View on GitHub`_
+* `View nekStab on GitHub`_
 * `Suggestions for new features and bug report`_
 
-.. _`View on GitHub`: https://github.com/ricardofrantz/nekStab
+.. _`View nekStab on GitHub`: https://github.com/ricardofrantz/nekStab
 .. _`Suggestions for new features and bug report`: https://github.com/ricardofrantz/nekStab/issues
-
 
 .. toctree::
    :maxdepth: 4
 
-   index
    installation
    parameters
    adapting
