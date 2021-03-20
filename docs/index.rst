@@ -5,8 +5,6 @@ nekStab Documentation
    :maxdepth: 2
    :caption: Contents:
 
-   autodoc
-
 Indices and tables
 ==================
 
