@@ -23,8 +23,10 @@ Useful links
    installation
    parameters
    adapting
+   tutorials
    references
-   autodoc
+   sourcecode
+   dev_log
 
 Indices and tables
 ==================

@@ -1,11 +1,26 @@
 Installing and running
 ======================
 
-Fist install code dependencies if running with GCC
+Mac OS 
+------ 
+.. code:: bash
 
+    brew install install libmpich-dev mpich libopenblas-dev build-essential cmake m4
+
+Ubuntu / pop OS / Debian 
+------------------------- 
 .. code:: bash
 
     sudo apt-get -y install libmpich-dev mpich libopenblas-dev build-essential cmake m4
+
+
+Optional packages
+-----------------
+.. code:: bash
+    pip install tornado dvipng matplotlib scipy numpy
+
+Cloning the repository
+----------------------
 
 Clone the repository and Nek5000 as a submodule:
 

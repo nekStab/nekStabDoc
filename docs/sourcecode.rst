@@ -3,6 +3,6 @@
 Source Code
 =============
 
-.. automodule:: helloWorld
+.. automodule:: fixed_points
   :members:
   :undoc-members:
