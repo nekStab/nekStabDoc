@@ -1,23 +1,30 @@
 Installing and running
 ======================
 
+----------------------------------------------
+Ubuntu / Mint / popOS / KDE  -- Debian Distros 
+----------------------------------------------
+.. code:: bash
+
+    sudo apt-get -y install libmpich-dev mpich libopenblas-dev build-essential cmake m4
+
+------
 Mac OS 
 ------ 
 .. code:: bash
 
     brew install install libmpich-dev mpich libopenblas-dev build-essential cmake m4
 
-Ubuntu / pop OS / Debian 
-------------------------- 
+-------------------
+(Optional packages)
+-------------------
 .. code:: bash
 
-    sudo apt-get -y install libmpich-dev mpich libopenblas-dev build-essential cmake m4
-
-
-Optional packages
------------------
-.. code:: bash
-    pip install tornado dvipng matplotlib scipy numpy
+    #Python
+    pip install tornado matplotlib scipy numpy
+    
+    #Other
+    git dvipng htop 
 
 Cloning the repository
 ----------------------
