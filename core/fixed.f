@@ -1,5 +1,6 @@
 c-----------------------------------------------------------------------
-      subroutine sfd !selective frequency damping with Euler
+      subroutine sfd 
+      !selective frequency damping with Euler
       implicit none
       include 'SIZE'
       include 'TOTAL'
@@ -77,7 +78,8 @@ c-----------------------------------------------------------------------
       return
       end
 c-----------------------------------------------------------------------
-      subroutine sfd_ab3 !SFD with higher-order temporal scheme and variable time-step
+      subroutine sfd_ab3
+      !SFD with higher-order temporal scheme and variable time-step
       implicit none
       include 'SIZE'
       include 'TOTAL'
