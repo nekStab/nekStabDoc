@@ -8,8 +8,6 @@ Main code
 ------------------------ 
 
 .. f:autosrcfile::  fixed.f
-    :objtype: function subroutine
-
 
 Eigensolvers
 ------------------------ 
