@@ -6,9 +6,9 @@ c-----------------------------------------------------------------------
       include 'TOTAL'
 
       integer, parameter :: lt=lx1*ly1*lz1*lelt
-      real, save, dimension(lt)   :: qxo,qyo,qzo
-      real, save, dimension(lt)   :: vxo,vyo,vzo
-      real, dimension(lt)         :: do1,do2,do3
+      real, save, dimension(lt)   :: qxo,qyo,qzo ! quantity 1
+      real, save, dimension(lt)   :: vxo,vyo,vzo ! quantity 2
+      real, dimension(lt)         :: do1,do2,do3 ! quantity 3
 
       real residu,h1,l2,semi,linf,rate,residu0,cutoff,gain,frq,sig,umax
       save residu0
