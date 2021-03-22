@@ -55,7 +55,7 @@ fortran_ext = ['f', '.f', '*.f'] #, 'f90', 'F90', 'f95', 'F95']
 # It is also possible to specify a directory name; in this case, all files than 
 # have an extension matching those define by the config variable `fortran_ext` are used.
 
-fortran_src = [ os.path.abspath('../core/'),  ]
+fortran_src = [ os.path.abspath('../core'),  ]
 #fortran_encoding = ["utf8"]
 #fortran_subsection_type = ["rubric"]
 # # "rubric" (default) : use directive rubric (lightweight title in bold).
