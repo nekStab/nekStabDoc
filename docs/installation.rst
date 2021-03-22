@@ -1,21 +1,25 @@
 Installing and running
 ======================
 
+
 ----------------------------------------------
-Ubuntu / Mint / popOS / KDE  -- Debian Distros 
+Prerequisites
+----------------------------------------------
+
+Ubuntu -- Debian Distros 
 ----------------------------------------------
 .. code:: bash
 
     sudo apt-get -y install libmpich-dev mpich libopenblas-dev build-essential cmake m4
 
-------
+
 Mac OS 
 ------ 
 .. code:: bash
 
     brew install install libmpich-dev mpich libopenblas-dev build-essential cmake m4
 
--------------------
+
 (Optional packages)
 -------------------
 .. code:: bash
@@ -23,9 +27,10 @@ Mac OS
     #Python
     pip install tornado matplotlib scipy numpy
     
-    #Other
+    #Other 
     git dvipng htop 
 
+----------------------
 Cloning the repository
 ----------------------
 
