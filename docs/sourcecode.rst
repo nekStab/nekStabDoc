@@ -7,24 +7,18 @@ Source Code
 Main code
 ------------------------ 
 
+.. f:autosrcfile::  fixed.f
+    :objtype: function subroutine
 
 
 Eigensolvers
 ------------------------ 
 
-.. f:autosrcfile::  fixed.f
-    :search_mode: basename
-    :objtype: function subroutine
 
 
-Base flows
+Stabilization tools
 ------------------------ 
-
-.. f:autosrcfile::  fixed.f
-    :objtype: function subroutine
 
 -----------------------------------
 Utilities
 -----------------------------------
-
-.. f:autosrcfile::  fixed.f
