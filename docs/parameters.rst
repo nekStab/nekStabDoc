@@ -10,7 +10,7 @@ Current form of input via uparams
                1:stabilization, 
                3   :  stability with direct,
                3.2:stability with adjoint,
-               3.2:stability with transientGrowth
+               3.3:stability with transientGrowth
                
 -  uparam(2) = restart vector for stability (optional)
 
@@ -46,7 +46,6 @@ Stability File (.pars)
    Writing: "Channel-al_eig_1.fld"
 
 .. _tab:stabparams:
-
 .. table:: ``STABILITY`` keys in the ``.par`` file
 
    +-------------------------+------------------------+---------------------------------------+
@@ -91,9 +90,10 @@ Stability File (.pars)
    | ``eigenTol``            | | ``(1e-6)``           | | Eigenvalue tolerance                |
    |                         | | ``<real>``           | | eigen_tol > 0                       |
    +-------------------------+------------------------+---------------------------------------+
+.. _tab:stabparams:
+
 
 .. _tab:stabparamsbf:
-
 .. table:: ``BASE_FLOW`` keys in the ``.pars`` file
 
    +-------------------------+------------------------+---------------------------------------+
@@ -112,9 +112,9 @@ Stability File (.pars)
    |                         | | ``mean``             |                                       |
    |                         | | ``periodic``         |                                       |
    +-------------------------+------------------------+---------------------------------------+
+.. _tab:stabparamsbf:
 
 .. _tab:stabparamssfd:
-
 .. table:: ``SFD`` keys in the ``.pars`` file
    +-------------------------+------------------------+---------------------------------------+
    | | Key                   | | Value(s)             | | Description                         |
@@ -136,21 +136,22 @@ Stability File (.pars)
    | ``scalar``              | | ``(no)``             | |                                     |
    |                         | | `` yes``             | |                                     |
    +-------------------------+------------------------+---------------------------------------+
+.. _tab:stabparamssfd:
 
 .. _tab:stabparamstdf:
-
 .. table:: ``TDF`` keys in the ``.pars`` file
    +-------------------------+------------------------+---------------------------------------+
    | | Key                   | | Value(s)             | | Description                         |
    +=========================+========================+=======================================+
    | ``baseFlowType``        | | ``(steady)``         | | Base flow type                      |
    +-------------------------+------------------------+---------------------------------------+
+.. _tab:stabparamstdf:
 
 .. _tab:stabparamsbc:
-
 .. table:: ``BOOSTCOV`` keys in the ``.pars`` file
    +-------------------------+------------------------+---------------------------------------+
    | | Key                   | | Value(s)             | | Description                         |
    +=========================+========================+=======================================+
    | ``baseFlowType``        | | ``(steady)``         | | Base flow type                      |
    +-------------------------+------------------------+---------------------------------------+
+.. _tab:stabparamsbc:

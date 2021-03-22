@@ -50,14 +50,13 @@ extensions = [
 ## -- Options for Sphinx-Fortran ---------------------------------------------
 
 # List of possible extensions in the case of a directory listing
-fortran_ext = ['f'] #, 'f90', 'F90', 'f95', 'F95']
+fortran_ext = ['*.f'] #, 'f90', 'F90', 'f95', 'F95']
 # This variable must be set with file pattern, like "*.f90", or a list of them. 
 # It is also possible to specify a directory name; in this case, all files than 
-# have an extension matching those define by the config variable `fortran_ext` 
-# are used.
+# have an extension matching those define by the config variable `fortran_ext` are used.
 
 # import os, sys
-fortran_src = [ os.path.abspath('../core/'),  ]
+fortran_src = [ os.path.abspath('../core'),  ]
 #fortran_encoding = ["utf8"]
 #fortran_subsection_type = ["rubric"]
 # # "rubric" (default) : use directive rubric (lightweight title in bold).
