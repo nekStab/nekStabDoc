@@ -57,7 +57,7 @@ fortran_ext = ['f'] #, 'f90', 'F90', 'f95', 'F95']
 # are used.
 
 # import os, sys
-fortran_src = [ os.path.abspath('../core'),  ]
+fortran_src = [ os.path.abspath('../core/'),  ]
 # #fortran_encoding = ["utf8"]
 # #fortran_subsection_type = ["rubric"]
 # # "rubric" (default) : use directive rubric (lightweight title in bold).
