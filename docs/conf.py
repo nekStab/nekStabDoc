@@ -44,7 +44,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
     #'sphinxfortran.fortran_domain',
-    #'sphinxfortran.fortran_autodoc',
+    'sphinxfortran.fortran_autodoc',
 ]
 
 ## -- Options for Sphinx-Fortran ---------------------------------------------

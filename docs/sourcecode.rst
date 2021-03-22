@@ -3,6 +3,6 @@
 Source Code
 =============
 
-.. automodule:: fixed_points
+.. automodule:: fixed
   :members:
   :undoc-members:
