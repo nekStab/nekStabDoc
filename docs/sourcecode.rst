@@ -3,6 +3,4 @@
 Source Code
 =============
 
-.. automodule:: fixed
-  :members:
-  :undoc-members:
+.. f:autosrcfile:: fixed.f
