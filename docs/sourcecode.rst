@@ -3,6 +3,10 @@
 Source Code
 =============
 
+.. f:autosrcfile::  file1.f
+    :objtype: function subroutine
+
+.. f:autosrcfile::  file2.f
+
 .. f:autosrcfile::  fixed.f
-    :search_mode: basename
     :objtype: function subroutine
