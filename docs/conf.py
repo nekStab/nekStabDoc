@@ -43,9 +43,37 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
-    #'sphinxfortran.fortran_domain',
-    #'sphinxfortran.fortran_autodoc',
+    'sphinxfortran.fortran_domain',
+    'sphinxfortran.fortran_autodoc',
 ]
+
+## -- Options for Sphinx-Fortran ---------------------------------------------
+
+# List of possible extensions in the case of a directory listing
+fortran_ext = ['f'] #, 'f90', 'F90', 'f95', 'F95']
+# This variable must be set with file pattern, like "*.f90", or a list of them. 
+# It is also possible to specify a directory name; in this case, all files than 
+# have an extension matching those define by the config variable `fortran_ext` 
+# are used.
+
+# import os, sys
+#fortran_src = [ os.path.abspath('../core'),  ]
+# #fortran_encoding = ["utf8"]
+# #fortran_subsection_type = ["rubric"]
+# # "rubric" (default) : use directive rubric (lightweight title in bold).
+# # "title" : uses a conventional title (text with underlining, whose character is defined by u fortran_title_underline).
+
+# #sys.path.insert(0, os.path.abspath('.'))
+
+# # Indentation string or length (default 4). If it is an integer, 
+# # indicates the number of spaces.
+fortran_indent = 4
+ 
+
+
+
+
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -270,26 +298,3 @@ html_context['display_github'] = True
 html_context['github_user'] = 'ricardofrantz'
 html_context['github_repo'] = 'nekStabDoc'
 html_context['github_version'] = 'master/docs/'
-
-## -- Options for Sphinx-Fortran ---------------------------------------------
-
-# List of possible extensions in the case of a directory listing
-####fortran_ext = ['*.f'] #, 'f90', 'F90', 'f95', 'F95']
-# This variable must be set with file pattern, like "*.f90", or a list of them. 
-# It is also possible to specify a directory name; in this case, all files than 
-# have an extension matching those define by the config variable `fortran_ext` 
-# are used.
-
-# import os, sys
-#fortran_src = [ os.path.abspath('../core'),  ]
-# #fortran_encoding = ["utf8"]
-# #fortran_subsection_type = ["rubric"]
-# # "rubric" (default) : use directive rubric (lightweight title in bold).
-# # "title" : uses a conventional title (text with underlining, whose character is defined by u fortran_title_underline).
-
-# #sys.path.insert(0, os.path.abspath('.'))
-
-# # Indentation string or length (default 4). If it is an integer, 
-# # indicates the number of spaces.
-#fortran_indent = 4
- 
