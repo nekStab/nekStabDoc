@@ -58,16 +58,12 @@ fortran_ext = ['f'] #, 'f90', 'F90', 'f95', 'F95']
 
 # import os, sys
 fortran_src = [ os.path.abspath('../core/'),  ]
-# #fortran_encoding = ["utf8"]
-# #fortran_subsection_type = ["rubric"]
+#fortran_encoding = ["utf8"]
+#fortran_subsection_type = ["rubric"]
 # # "rubric" (default) : use directive rubric (lightweight title in bold).
 # # "title" : uses a conventional title (text with underlining, whose character is defined by u fortran_title_underline).
-
-# #sys.path.insert(0, os.path.abspath('.'))
-
-# # Indentation string or length (default 4). If it is an integer, 
-# # indicates the number of spaces.
-fortran_indent = 4
+# Indentation string or length (default 4). If it is an integer, indicates the number of spaces.
+fortran_indent = 6
  
 
 

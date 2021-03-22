@@ -1,4 +1,13 @@
 c-----------------------------------------------------------------------
+      subroutine sfd1
+      !testing comments
+      
+      implicit none
+      include 'SIZE'
+      include 'TOTAL'
+
+      end
+c-----------------------------------------------------------------------
       subroutine sfd !selective frequency damping with Euler
       implicit none
       include 'SIZE'
@@ -191,4 +200,5 @@ c-----------------------------------------------------------------------
         endif
       return
       end
+
 c-----------------------------------------------------------------------
