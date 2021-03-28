@@ -12,23 +12,24 @@ Ubuntu -- Debian Distros
 
     sudo apt-get -y install libmpich-dev mpich libopenblas-dev build-essential cmake m4
 
-
 Mac OS 
 ------ 
 .. code:: bash
 
-    brew install install libmpich-dev mpich libopenblas-dev build-essential cmake m4
-
+    install https://brew.sh/ and Xcode's Command Line Tools
+    brew install install gcc mpich openblas m4
+    brew install --cask cmake
+    (it also works on ARM-based procs via Rosetta 2)
 
 (Optional packages)
 -------------------
 .. code:: bash
 
-    #Python
-    pip install tornado matplotlib scipy numpy
+    #python
+    pip install tornado scipy
     
-    #Other 
-    git dvipng htop 
+    #other 
+    paraview git dvipng htop 
 
 ----------------------
 Cloning the repository
