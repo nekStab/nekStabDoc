@@ -2,6 +2,8 @@
 Adapting your case
 ==================
 
+git update-index --chmod +x script.sh
+
 we recommend converting old *.rea* files to **.par** + **.re2** and
 **.ma2**
 

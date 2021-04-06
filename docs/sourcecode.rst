@@ -7,15 +7,15 @@ Source Code
 Main code
 ------------------------ 
 
-.. f:autosrcfile::  fixed.f
 
 Eigensolvers
 ------------------------ 
 
 
-
 Stabilization tools
 ------------------------ 
+
+.. f:autosrcfile::  fixed.f
 
 -----------------------------------
 Utilities

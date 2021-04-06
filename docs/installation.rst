@@ -10,7 +10,7 @@ Ubuntu -- Debian Distros
 ----------------------------------------------
 .. code:: bash
 
-    sudo apt-get -y install libmpich-dev mpich libopenblas-dev build-essential cmake m4
+    sudo apt-get -y install libmpich-dev libopenblas-dev cmake m4
 
 Mac OS 
 ------ 
@@ -29,7 +29,14 @@ Mac OS
     pip install tornado scipy
     
     #other 
-    paraview git dvipng htop 
+    code fortran-language-server paraview git dvipng htop 
+
+    #code
+    krvajalm.linter-gfortran
+    nimda.deepdark-material
+    ms-vscode-remote.vscode-remote-extensionpack
+    hansec.fortran-ls
+    yukiuuh.vscode-modern-fortran-formatter
 
 ----------------------
 Cloning the repository
