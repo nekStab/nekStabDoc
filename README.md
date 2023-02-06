@@ -1,1 +1,1 @@
-# https://nekstab.github.io/nekStabDoc/en/master/
+# https://nekstab.github.io/nekStabDoc/en/main
