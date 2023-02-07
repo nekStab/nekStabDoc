@@ -20,7 +20,7 @@ import sys
 # -- Project information -----------------------------------------------------
 
 project = 'nekStab'
-copyright = '2020, Ricardo Frantz'
+copyright = '2023, Ricardo Frantz'
 author = 'Ricardo Frantz'
 
 # The short X.Y version
