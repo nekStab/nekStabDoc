@@ -8,8 +8,8 @@ set -x
 #
 # Authors: Michael Altfield <michael@michaelaltfield.net>
 # Created: 2020-07-17
-# Updated: 2020-07-20
-# Version: 0.2
+# Updated: 2023-03-26
+# Version: 0.3
 ################################################################################
  
 ###################
@@ -19,11 +19,14 @@ set -x
 apt-get update
 apt-get -y install git rsync python3-sphinx python3-sphinx-rtd-theme python3-stemmer python3-git python3-pip python3-virtualenv python3-setuptools
  
-python3 -m pip install --upgrade rinohtype pygments numpy sphinx-fortran sphinx_pdj_theme
+python3 -m pip install --upgrade rinohtype pygments
  
 #####################
 # DECLARE VARIABLES #
 #####################
+
+# prevent git "detected dubious ownership" errors
+git config --global --add safe.directory "*"
  
 pwd
 ls -lah
