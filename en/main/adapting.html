@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adapting your case &mdash; nekStab 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorials" href="tutorials.html" />
+    <link rel="prev" title="Parameters" href="parameters.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> nekStab
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                main
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing and running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html">Parameters</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Adapting your case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#programming-best-practices">Programming best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sourcecode.html">Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_log.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_log.html#changelog-on-nek5000">Changelog on Nek5000</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">nekStab</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Adapting your case</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/ricardofrantz/nekStabDoc/blob/master/docs/adapting.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="adapting-your-case">
+<h1>Adapting your case<a class="headerlink" href="#adapting-your-case" title="Permalink to this heading">¶</a></h1>
+<p>git update-index –chmod +x script.sh</p>
+<p>we recommend converting old <em>.rea</em> files to <strong>.par</strong> + <strong>.re2</strong> and
+<strong>.ma2</strong></p>
+<p>in <em>SIZE</em> be sure to modify and include:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">parameter</span><span class="w"> </span><span class="p">(</span><span class="n">lpelt</span><span class="o">=</span><span class="n">lelt</span><span class="p">)</span>
+<span class="k">include</span><span class="w"> </span><span class="s1">&#39;NEKSTAB.inc&#39;</span>
+</pre></div>
+</div>
+<p>in your <em>.usr</em>, add to <strong>userchk</strong> and <a href="#id1"><span class="problematic" id="id2">**</span></a>userf <a href="#id3"><span class="problematic" id="id4">**</span></a>respectively:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">call</span> <span class="n">nekStab</span>
+<span class="n">call</span> <span class="n">nekStab_forcing</span><span class="p">(</span><span class="n">ffx</span><span class="p">,</span><span class="n">ffy</span><span class="p">,</span><span class="n">ffz</span><span class="p">,</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">iz</span><span class="p">,</span><span class="n">ieg</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="programming-best-practices">
+<h1>Programming best practices<a class="headerlink" href="#programming-best-practices" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>The best style is consistent style!</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Always use <strong>implicit none</strong> with exception from <em>.usr</em></p></li>
+<li><p>Comments with ! instead of c</p></li>
+<li><p>Use tab length with 3 space characters</p></li>
+<li><p>small caps for fortran syntax : while, for, do, etc.</p></li>
+<li><p>proper define real numbers: 0.0d0, 0.50d0, 1.0d0</p></li>
+<li><p>subroutine -&gt; return, end</p></li>
+<li><p>to print output we use write(6,*)</p></li>
+<li><p>stop the code with <em>call **exitt**</em></p></li>
+<li><p>use <em>nelv</em> instead of <strong>nelt</strong> for consistency as we must respect
+velocity mesh</p></li>
+<li><p>use <em>n</em> and <em>n2</em> for loops instead of <em>ntot1</em></p></li>
+<li><p>local field declarations with <em>lt</em> and <em>lt2</em></p></li>
+</ol>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">save</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">lt</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">field1</span><span class="p">,</span><span class="n">field2</span><span class="p">,</span><span class="n">field3</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>shared variables in our custom x_SIZE.f respecting the standard Nek
+style like in /core</p></li>
+</ol>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span>c     Solution data
+      real vx     (lx1,ly1,lz1,lelv)
+     $    ,vy     (lx1,ly1,lz1,lelv)
+     $    ,vz     (lx1,ly1,lz1,lelv)
+      common /vptsol/ vx, vy, vz
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Limit line length increased to 132 to avoid excessive use of
+continuation tabs, in most cases we are slightly over the 72
+characters standard</p></li>
+</ol>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorials.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="parameters.html" class="btn btn-neutral float-left" title="Parameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, Ricardo Frantz
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: main
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/en/main/">en</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/nekStabDoc/es/main/">es</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/en/main/">main</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/nekStabDoc/en/main/nekStab-docs_en_main.pdf">pdf</a></dd>
+        
+          <dd><a href="/nekStabDoc/en/main/nekStab-docs_en_main.epub">epub</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

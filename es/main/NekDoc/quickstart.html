@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quickstart &mdash; documentación de nekStab - 1.0.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> nekStab
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                main
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing and running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters.html">Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adapting.html">Adapting your case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adapting.html#programming-best-practices">Programming best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sourcecode.html">Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_log.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_log.html#changelog-on-nek5000">Changelog on Nek5000</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">nekStab</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Quickstart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/ricardofrantz/nekStabDoc/blob/master/docs/NekDoc/quickstart.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="quickstart">
+<span id="qstart"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Enlace permanente a este encabezado">¶</a></h1>
+<p>Before beginning to use Nek5000, it is recommended that the user have basic familiarity with Linux or another Unix-based OS.
+The instructions provided in the quickstart guide and the tutorials use basic bash commands and assume the user has this knowledge.</p>
+<section id="directory-structure">
+<h2>Directory structure<a class="headerlink" href="#directory-structure" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>Here’s a brief description of each top-level directory:</p>
+<aside class="topic">
+<p class="topic-title">/core</p>
+<p>contains the Nek5000 application sources.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">/bin</p>
+<p>contains scripts for running nek5000 and manipulating its output.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">/tools</p>
+<p>contains the sources for the pre- and post-processing tools which are stand-alone.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">/short-tests</p>
+<p>contains light-weight regression tests for verification.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">/run</p>
+<p>consistent place for users to place their problem cases.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">/examples</p>
+<p>contains example problems. Note: NOT included in the master branch on the GitHub repo.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">/doc</p>
+<p>contains the user documentation. Note: NOT included in the master branch on the GitHub repo.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">/3rd_party</p>
+<p>its purpose it to provide a consistent place for 3rd party code.</p>
+</aside>
+</section>
+<section id="case-files">
+<h2>Case files<a class="headerlink" href="#case-files" title="Enlace permanente a este encabezado">¶</a></h2>
+<aside class="topic">
+<p class="topic-title">SIZE</p>
+<p>contains some hardwired runtime parameters to dimension static arrays.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">foo.par</p>
+<p>contains runtime parameters.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">foo.re2</p>
+<p>contains mesh and boundary data.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">foo.ma2</p>
+<p>contains partioning data.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">foo.usr</p>
+<p>contains user specific code to initialize solver, set source terms and boundary conditions or to manipulate solver internals.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">foo.his</p>
+<p>contains probing points.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">foo.f00000</p>
+<p>contains checkpoint data.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">foo.nek5000</p>
+<p>contains metadata for VisIt or ParaView.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">foo.rea (legacy)</p>
+<p>contains runtime parameters and mesh in ASCII. Replaced by .par and .re2 file.</p>
+</aside>
+<aside class="topic">
+<p class="topic-title">foo.map (legacy)</p>
+<p>contains partioning data in ASCII.</p>
+</aside>
+<p>Note: The old legacy files (.rea &amp; .map) are recommended for debugging purposes only.</p>
+</section>
+<section id="scripts">
+<h2>Scripts<a class="headerlink" href="#scripts" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>Let’s walk through some useful batch scripts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">makenek</span> <span class="pre">&lt;case&gt;</span></code> compiles your case</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nek/nekb</span> <span class="pre">&lt;case&gt;</span></code> runs a serial job in foreground or background</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nekmpi/nekbmpi</span> <span class="pre">&lt;case&gt;</span> <span class="pre">&lt;number</span> <span class="pre">of</span> <span class="pre">ranks&gt;</span></code> runs a parallel job</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">neknek</span> <span class="pre">&lt;case1&gt;</span> <span class="pre">&lt;cas2&gt;</span> <span class="pre">&lt;ranks</span> <span class="pre">1&gt;</span> <span class="pre">&lt;ranks</span> <span class="pre">2&gt;</span></code> runs Nek5000 with two overlapping component grids</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">visnek</span> <span class="pre">&lt;case&gt;</span></code> creates metadata file required by <a class="reference external" href="https://wci.llnl.gov/simulation/computer-codes/visit/">VisIt</a> and <a class="reference external" href="https://www.paraview.org/">ParaView</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">&lt;old</span> <span class="pre">name&gt;</span> <span class="pre">&lt;new</span> <span class="pre">name&gt;</span></code> renames all case files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cpn</span> <span class="pre">&lt;old</span> <span class="pre">name&gt;</span> <span class="pre">&lt;new</span> <span class="pre">name&gt;</span></code> copies all case files</p></li>
+</ul>
+</section>
+<section id="running-your-very-first-simulation">
+<h2>Running your very first simulation<a class="headerlink" href="#running-your-very-first-simulation" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>Hold your horses, this needs less than 5 min.
+Begin by downloading the latest release tarball from <a class="reference external" href="https://github.com/Nek5000/Nek5000/releases">here</a>.
+Then follow the instructions below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ~
+tar -xvzf Nek5000_X.Y.tar.gz
+export PATH=$HOME/Nek5000/bin:$PATH
+cd ~/Nek5000/tools
+./maketools genmap
+cd ~/Nek5000/run
+cp -r ../examples/eddy_uv .
+cd eddy_uv
+genmap                       # run partioner, on input type eddy_uv
+makenek eddy_uv              # build case, edit script to change settings
+nekbmpi eddy_uv 2            # run Nek5000 on 2 ranks in the background
+tail logfile                 # view solver output
+visnek eddy_uv               # produces the eddy_uv.nek5000 file
+</pre></div>
+</div>
+<p>As the case runs, it will generate multiple <code class="docutils literal notranslate"><span class="pre">eddy_uv0.fXXXXX</span></code> files.
+These are the restart checkpoint and visualization data files.
+The metadata file, <code class="docutils literal notranslate"><span class="pre">eddy_uv.nek5000</span></code>, can be opened with either VisIt or ParaView, which will look for the data files in the same directory as the <code class="docutils literal notranslate"><span class="pre">eddy_uv.nek5000</span></code> file.</p>
+<p>Note that this will not work if you clone the master branch from GitHub, as the <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder is NOT included.
+To obtain the examples using git, clone the <code class="docutils literal notranslate"><span class="pre">Nek5000/NekExamples.git</span></code> repository.</p>
+</section>
+<section id="meshing">
+<span id="qstart-meshing"></span><h2>Meshing<a class="headerlink" href="#meshing" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>Nek5000 is mainly a solver.
+However, simple box type meshes can be generated with the <code class="docutils literal notranslate"><span class="pre">genbox</span></code> tool.
+For more complex meshes please consider using <code class="docutils literal notranslate"><span class="pre">PRENEK</span></code> and the meshing tools <code class="docutils literal notranslate"><span class="pre">nekmerge</span></code> and <code class="docutils literal notranslate"><span class="pre">n2to3</span></code>.
+We provide mesh converters like <code class="docutils literal notranslate"><span class="pre">exo2nek</span></code> and <code class="docutils literal notranslate"><span class="pre">msh2nek</span></code> which are quite handy if you want to use your favorite mesh generator.</p>
+</section>
+<section id="visualization">
+<span id="qstart-vis"></span><h2>Visualization<a class="headerlink" href="#visualization" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>Nek5000 output (<code class="docutils literal notranslate"><span class="pre">.fld</span></code> or <code class="docutils literal notranslate"><span class="pre">0.f%05d</span></code>) files can be read by <a class="reference external" href="https://wci.llnl.gov/simulation/computer-codes/visit/">VisIt</a> or <a class="reference external" href="https://www.paraview.org/">ParaView</a>.
+This requires using <code class="docutils literal notranslate"><span class="pre">visnek</span></code> to generate a metadata file.
+There is also an built-in X-Window based postprocessor called <code class="docutils literal notranslate"><span class="pre">POSTNEK</span></code> located in tools.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, Ricardo Frantz
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: main
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+          
+          <dd><a href="/nekStabDoc/en/main/">en</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/es/main/">es</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/es/main/">main</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/nekStabDoc/es/main/nekStab-docs_es_main.pdf">pdf</a></dd>
+        
+          <dd><a href="/nekStabDoc/es/main/nekStab-docs_es_main.epub">epub</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

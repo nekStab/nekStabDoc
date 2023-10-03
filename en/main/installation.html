@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing and running &mdash; nekStab 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Parameters" href="parameters.html" />
+    <link rel="prev" title="nekStab" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> nekStab
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                main
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing and running</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ubuntu-debian-distros">Ubuntu – Debian Distros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mac-os">Mac OS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-packages">(Optional packages)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cloning-the-repository">Cloning the repository</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html">Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapting.html">Adapting your case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapting.html#programming-best-practices">Programming best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sourcecode.html">Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_log.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_log.html#changelog-on-nek5000">Changelog on Nek5000</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">nekStab</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Installing and running</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/ricardofrantz/nekStabDoc/blob/master/docs/installation.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="installing-and-running">
+<h1>Installing and running<a class="headerlink" href="#installing-and-running" title="Permalink to this heading">¶</a></h1>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<section id="ubuntu-debian-distros">
+<h3>Ubuntu – Debian Distros<a class="headerlink" href="#ubuntu-debian-distros" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>libmpich-dev<span class="w"> </span>libopenblas-dev<span class="w"> </span>cmake<span class="w"> </span>m4
+</pre></div>
+</div>
+</section>
+<section id="mac-os">
+<h3>Mac OS<a class="headerlink" href="#mac-os" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>install https://brew.sh/ and Xcode&#39;s Command Line Tools
+brew install install gcc mpich openblas m4
+brew install --cask cmake
+(it also works on ARM-based procs via Rosetta 2)
+</pre></div>
+</div>
+</section>
+<section id="optional-packages">
+<h3>(Optional packages)<a class="headerlink" href="#optional-packages" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#python</span>
+pip<span class="w"> </span>install<span class="w"> </span>tornado<span class="w"> </span>scipy
+
+<span class="c1">#other</span>
+code<span class="w"> </span>fortran-language-server<span class="w"> </span>paraview<span class="w"> </span>git<span class="w"> </span>dvipng<span class="w"> </span>htop
+
+<span class="c1">#code</span>
+krvajalm.linter-gfortran
+nimda.deepdark-material
+ms-vscode-remote.vscode-remote-extensionpack
+hansec.fortran-ls
+yukiuuh.vscode-modern-fortran-formatter
+</pre></div>
+</div>
+</section>
+</section>
+<section id="cloning-the-repository">
+<h2>Cloning the repository<a class="headerlink" href="#cloning-the-repository" title="Permalink to this heading">¶</a></h2>
+<p>Clone the repository and Nek5000 as a submodule:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">50</span><span class="w"> </span>--branch<span class="o">=</span>master<span class="w"> </span>https://github.com/ricardofrantz/nekStab.git
+<span class="nb">cd</span><span class="w"> </span>nekStab
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</pre></div>
+</div>
+<p>Run <strong>(sudo) vim $HOME/.bashrc</strong> and add the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">NEKSTAB_SOURCE_ROOT</span><span class="o">=</span><span class="nv">$HOME</span>/nekStab
+<span class="nb">export</span><span class="w"> </span><span class="nv">NEK_SOURCE_ROOT</span><span class="o">=</span><span class="nv">$NEKSTAB_SOURCE_ROOT</span>/Nek5000
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$NEK_SOURCE_ROOT</span>/bin:<span class="nv">$PATH</span>
+</pre></div>
+</div>
+<p>Compile Nek5000 tools:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/nekStab/Nek5000/tools
+./maketools<span class="w"> </span>all
+</pre></div>
+</div>
+<p>Outputs
+| <a href="#id1"><span class="problematic" id="id2">``</span></a>building genmap … done</p>
+<blockquote>
+<div><p>building gencon … done
+building genbox … done
+building n2to3 … done
+building reatore2 … done
+building nekmerge … done
+building prenek … done
+building postnek … done
+building nekamg_setup … done
+building gmsh2nek … done
+building exo2nek … done
+building cgns2nek … done``</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Move to a specific example, for instance: <strong>cd examples/1cyl</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./cmpile.sh<span class="w"> </span>all
+nekbmpi<span class="w"> </span>1cyl<span class="w"> </span><span class="m">4</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="parameters.html" class="btn btn-neutral float-right" title="Parameters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="nekStab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, Ricardo Frantz
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: main
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/en/main/">en</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/nekStabDoc/es/main/">es</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/en/main/">main</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/nekStabDoc/en/main/nekStab-docs_en_main.pdf">pdf</a></dd>
+        
+          <dd><a href="/nekStabDoc/en/main/nekStab-docs_en_main.epub">epub</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

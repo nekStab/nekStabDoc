@@ -1,0 +1,1651 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Case Files &mdash; nekStab 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> nekStab
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                main
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parameters.html">Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../adapting.html">Adapting your case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../adapting.html#programming-best-practices">Programming best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sourcecode.html">Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_log.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_log.html#changelog-on-nek5000">Changelog on Nek5000</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nekStab</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Case Files</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/ricardofrantz/nekStabDoc/blob/master/docs/NekDoc/problem_setup/case_files.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="case-files">
+<span id="id1"></span><h1>Case Files<a class="headerlink" href="#case-files" title="Permalink to this heading">¶</a></h1>
+<p>Each simulation is defined by six <em>required</em> case files:</p>
+<ul class="simple">
+<li><p>SESSION.NAME</p></li>
+<li><p>par       (runtime parameters)</p></li>
+<li><p>re2       (mesh and boundaries)</p></li>
+<li><p>usr       (user defined functions for inital/boundary condition etc.)</p></li>
+<li><p>SIZE      (parameters for static memory allocation)</p></li>
+<li><p>map/ma2   (element processes mapping)</p></li>
+</ul>
+<p>Additional <em>optional</em> case files may be generated or included:</p>
+<ul class="simple">
+<li><p>f%05d     (solution data)</p></li>
+<li><p>his       (probing point data)</p></li>
+</ul>
+<section id="session-name">
+<h2>SESSION.NAME<a class="headerlink" href="#session-name" title="Permalink to this heading">¶</a></h2>
+<p>To run Nek5000, each simulation must have a <code class="docutils literal notranslate"><span class="pre">SESSION.NAME</span></code> file.
+This file is read in by the code and gives the path to the relevant files describing the structure and parameters of the simulation.
+The <code class="docutils literal notranslate"><span class="pre">SESSION.NAME</span></code> file is a file that contains the name of the simulation and the full path to supporting files.
+For example, to run the eddy example from the repository, the <code class="docutils literal notranslate"><span class="pre">SESSION.NAME</span></code> file would look like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>eddy_uv
+/home/user_name/Nek5000/short_tests/eddy/
+</pre></div>
+</div>
+<p>Note that this file is generated automatically by the <code class="docutils literal notranslate"><span class="pre">nek</span></code>, <code class="docutils literal notranslate"><span class="pre">nekb</span></code>, <code class="docutils literal notranslate"><span class="pre">nekmpi</span></code> and <code class="docutils literal notranslate"><span class="pre">nekbmpi</span></code> scripts at runtime.</p>
+</section>
+<section id="parameter-file-par">
+<span id="case-files-par"></span><h2>Parameter File (.par)<a class="headerlink" href="#parameter-file-par" title="Permalink to this heading">¶</a></h2>
+<p>The simulation paramaters are defined in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file.
+The keys are grouped in different sections and a specific value is assigned to each key.
+The <code class="docutils literal notranslate"><span class="pre">.par</span></code> file follows the structure exemplified below.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#
+# nek parameter file
+#
+
+[SECTION]
+key = value
+...
+
+[SECTION]
+key = value
+...
+</pre></div>
+</div>
+<p>The sections are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GENERAL</span></code> (mandatory)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PROBLEMTYPE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MESH</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VELOCITY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PRESSURE</span></code> (required for velocity)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEMPERATURE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SCALAR%%</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CVODE</span></code></p></li>
+</ul>
+<p>When scalars are used, the keys of each scalar are defined under the section <code class="docutils literal notranslate"><span class="pre">SCALAR%%</span></code> varying
+between <code class="docutils literal notranslate"><span class="pre">SCALAR01</span></code> and <code class="docutils literal notranslate"><span class="pre">SCALAR99</span></code>. The descripton of the keys of each section is given in the
+following tables (all keys/values are case insensitive). The value assigned to each key can be a
+user input (e.g. a &lt;real&gt; value) or one of the avaliable options listed in the tables below.
+Values in parentheses denote the default value.</p>
+<span id="tab-generalparams"></span><table class="docutils align-default" id="id2">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GENERAL</span></code> keys in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">startFrom</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;string&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Absolute/relative path of the field file</div>
+<div class="line">to restart the simulation from</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stopAt</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(numSteps)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">endTime</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Stop mode</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">endTime</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Final physical time at which we want to</div>
+<div class="line">our simulation to stop</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">numSteps</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Number of time steps instead of specifying</div>
+<div class="line">final physical time</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dt</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Specifies the step size or in case of a</div>
+<div class="line">a variable time step the maximum step size</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">variableDT</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(no)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">yes</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Controls if the step size will be adjusted</div>
+<div class="line">to match the targetCFL</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">targetCFL</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Sets stability/target CFL number for</div>
+<div class="line">OIFS or variable time steps</div>
+<div class="line">(fixed to 0.5 for standard extrapolation</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">writeControl</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(timeStep)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">runTime</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Specifies whether checkpointing is based</div>
+<div class="line">on number of time steps or physical time</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">writeInterval</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Checkpoint frequency in time steps or</div>
+<div class="line">physical time</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">filtering</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(none)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">explicit</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">hpfrt</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Specifies the filtering method</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">filterModes</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;int&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Specifies the number of modes filtered as</div>
+<div class="line">an alternative to specifying the cutoff</div>
+<div class="line">ratio</div>
+<div class="line">Note: requires the use of at least 2 modes</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">filterCutoffRatio</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Ratio of modes not affected by the filter</div>
+<div class="line">Use i.e. for stabilization or LES 0.9/0.65</div>
+<div class="line">as an alternative to specifying the number</div>
+<div class="line">of modes explicitly</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">filterWeight</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Sets the filter strength of transfer</div>
+<div class="line">function of the last mode (explicit) or the</div>
+<div class="line">relaxation parameter in case of hpfrt</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">writeDoublePrecision</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">no</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(yes)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Sets the precision of the field files</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">writeNFiles</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(1)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Sets the number of output files</div>
+<div class="line">By default a parallel shared file is used</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dealiasing</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">no</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(yes)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Enable/diasble over-integration</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">timeStepper</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">BDF1</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(BDF2)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">BDF3</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Time integration order</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">extrapolation</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(standard)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">OIFS</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Extrapolation method</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">optLevel</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(2)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Optimization level</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">logLevel</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(2)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Verbosity level</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">userParam%%</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">User parameter (can be accessed through</div>
+<div class="line">uparam(%) array in <code class="docutils literal notranslate"><span class="pre">.usr</span></code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span id="tab-probtypeparams"></span><table class="docutils align-default" id="id3">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">PROBLEMTYPE</span></code> keys in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">equation</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(incompNS)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">lowMachNS</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">steadyStokes</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">incompLinNS</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">incompLinAdjNS</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">incompMHD</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">compNS</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Specifies equation type</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">axiSymmetry</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(no)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">yes</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Axisymmetric problem</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">swirl</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(no)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">yes</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Enable axisymmetric azimuthal velocity</div>
+<div class="line">component (stored in temperature field</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cyclicBoundaries</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(no)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">yes</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Sets cyclic periodic boundaries</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">numberOfPerturbations</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(1)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Number of perturbations for linearized NS</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">solveBaseFlow</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(no)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">yes</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Solve for base flow in case of linearized NS</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">variableProperties</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(no)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">yes</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Enable variable transport properties</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stressFormulation</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(no)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">yes</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Enable stress formulation</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dp0dt</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(no)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">yes</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Enable time-varying thermodynamic pressure</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span id="tab-commonparams"></span><table class="docutils align-default" id="id4">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">COMMON</span></code> keys for all field variables in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">residualTol</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Residual tolerance used by solver (not for CVODE)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">residualProj</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(no)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">yes</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Controls the residual projection</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">writeToFieldFile</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">no</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(yes)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Controls if fields will be written on output</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span id="tab-meshparams"></span><table class="docutils align-default" id="id5">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">MESH</span></code> keys in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">motion</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(none)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">user</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">elasticity</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Mesh motion solver</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">viscosity</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(0.4)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Diffusivity for elasticity solver</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">numberOfBCFields</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(nfields)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Number of field variables which have a boundary</div>
+<div class="line-block">
+<div class="line">condition in <code class="docutils literal notranslate"><span class="pre">.re2</span></code> file</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">firstBCFieldIndex</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">or</span> <span class="pre">2)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Field index of the first BC specified in <code class="docutils literal notranslate"><span class="pre">.re2</span></code></div>
+<div class="line">file</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span id="tab-velocityparams"></span><table class="docutils align-default" id="id6">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">VELOCITY</span></code> keys in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">viscosity</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Dynamic viscosity</div>
+<div class="line">A negative value sets the Reynolds number</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">density</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Density</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span id="tab-pressureparams"></span><table class="docutils align-default" id="id7">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">PRESSURE</span></code> keys in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">preconditioner</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(semg_xxt)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">semg_amg</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Preconditioning method</div>
+<div class="line">First time usage of AMG will write three</div>
+<div class="line">dump files to disc. Subsequently please run</div>
+<div class="line">the amg_hypre tool to create the setup files</div>
+<div class="line">required for the AMG solver initialization</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span id="tab-tpscommonparams"></span><table class="docutils align-default" id="id8">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">COMMON</span></code> keys for temperature and scalar fields in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">solver</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(helm)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cvode</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">none</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Solver for scalar</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">advection</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">no</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(yes)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Controls if advection is present</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">absoluteTol</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Absolute tolerance used by CVODE</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span id="tab-temperatureparams"></span><table class="docutils align-default" id="id9">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">TEMPERATURE</span></code> keys in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ConjugateHeatTransfer</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(no)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">yes</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Controls conjugate heat transfer</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conductivity</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Thermal conductivity</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rhoCp</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Product of density and heat capacity</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">[TEMPERATURE]</span> <span class="pre">solver</span> <span class="pre">=</span> <span class="pre">none</span></code> is incompatible with <code class="docutils literal notranslate"><span class="pre">[PROBLEMTYPE]</span> <span class="pre">equation</span> <span class="pre">=</span> <span class="pre">lowMachNS</span></code> without defining a custom thermal divergence in the <code class="docutils literal notranslate"><span class="pre">usr</span></code> file.</p>
+<span id="tab-scalarparams"></span><table class="docutils align-default" id="id10">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">SCALAR%%</span></code> keys in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">density</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Density</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">diffusivity</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Diffusivity</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span id="tab-cvodeparams"></span><table class="docutils align-default" id="id11">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">CVODE</span></code> keys in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">relativeTol</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Relative tolerance (applies to all scalars)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stiff</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">no</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(yes)</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Controls if BDF or Adams Moulton is used</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">preconditioner</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(none)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">user</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Preconditioner method</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dtMax</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Maximum internal step size</div>
+<div class="line">Controls splitting error of velocity</div>
+<div class="line">scalar coupling (e.g. set to 1-4 dt)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mesh-file-re2">
+<span id="case-files-re2"></span><h2>Mesh File (.re2)<a class="headerlink" href="#mesh-file-re2" title="Permalink to this heading">¶</a></h2>
+<p>Stores the mesh and boundary condition.</p>
+<p>TODO: Update to re2</p>
+<section id="header">
+<h3>Header<a class="headerlink" href="#header" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p>The 80 byte ASCI header of the file has the following representation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#v002     200  3     100 hdr</span>
+</pre></div>
+</div>
+<p>The header states first how many elements are available in total (200), what
+dimension is the the problem (here three dimensional), and how many elements
+are in the fluid mesh (100).</p>
+</div></blockquote>
+</section>
+<section id="element-data">
+<h3>Element data<a class="headerlink" href="#element-data" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div><span id="tab-element"></span><table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Geometry description in <code class="docutils literal notranslate"><span class="pre">.rea</span></code> file</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head" colspan="5"><p><code class="docutils literal notranslate"><span class="pre">ELEMENT</span> <span class="pre">1</span> <span class="pre">[</span> <span class="pre">1A]</span> <span class="pre">GROUP</span> <span class="pre">0</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="5"><p><code class="docutils literal notranslate"><span class="pre">Face</span> <span class="pre">{1,2,3,4}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x_{1,\ldots,4}=\)</span></p></td>
+<td><p>0.000000E+00</p></td>
+<td><p>0.171820E+00</p></td>
+<td><p>0.146403E+00</p></td>
+<td><p>0.000000E+00</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(y_{1,\ldots,4}=\)</span></p></td>
+<td><p>0.190000E+00</p></td>
+<td><p>0.168202E+00</p></td>
+<td><p>0.343640E+00</p></td>
+<td><p>0.380000E+00</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{1,\ldots,4}=\)</span></p></td>
+<td><p>0.000000E+00</p></td>
+<td><p>0.000000E+00</p></td>
+<td><p>0.000000E+00</p></td>
+<td><p>0.000000E+00</p></td>
+</tr>
+<tr class="row-even"><td colspan="5"><p><code class="docutils literal notranslate"><span class="pre">Face</span> <span class="pre">{5,6,7,8}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x_{5,\ldots,8}=\)</span></p></td>
+<td><p>0.000000E+00</p></td>
+<td><p>0.171820E+00</p></td>
+<td><p>0.146403E+00</p></td>
+<td><p>0.000000E+00</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(y_{5,\ldots,8}=\)</span></p></td>
+<td><p>0.190000E+00</p></td>
+<td><p>0.168202E+00</p></td>
+<td><p>0.343640E+00</p></td>
+<td><p>0.380000E+00</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{5,\ldots,8}=\)</span></p></td>
+<td><p>0.250000E+00</p></td>
+<td><p>0.250000E+00</p></td>
+<td><p>0.250000E+00</p></td>
+<td><p>0.250000E+00</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Following the header, all elements are listed. The fluid elements are listed
+first, followed by all solid elements if present.</p>
+<p>The data following the header is formatted as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab:element</span></code>. This provides all the coordinates of an element for top and bottom faces. The numbering of the vertices is shown in Fig. <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:elorder</span></code>. The header for each element as in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab:element</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">[1A]</span> <span class="pre">GROUP</span></code> is reminiscent of older Nek5000 format and does not impact the mesh generation at this stage.</p>
+<blockquote>
+<div><figure class="align-center" id="id13">
+<span id="fig-elorder"></span><img alt="rea-geometry" src="../../_images/3dcube_1.png" />
+<figcaption>
+<p><span class="caption-text">Geometry description in <code class="docutils literal notranslate"><span class="pre">.rea</span></code> file (sketch of one element ordering - Preprocessor
+corner notation)</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="curved-sides">
+<h3>Curved Sides<a class="headerlink" href="#curved-sides" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p>This section describes the curvature of the elements. It is expressed as deformation of the linear elements.
+Therefore, if no elements are curved (if only linear elements are present) the section remains empty.</p>
+<p>The section header may look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">640</span> <span class="n">Curved</span> <span class="n">sides</span> <span class="n">follow</span> <span class="n">IEDGE</span><span class="p">,</span><span class="n">IEL</span><span class="p">,</span><span class="n">CURVE</span><span class="p">(</span><span class="n">I</span><span class="p">),</span><span class="n">I</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="n">CCURVE</span>
+</pre></div>
+</div>
+<p>Curvature information is provided by edge and element. Therefore up to 12 curvature entries can be present for each element.
+Only non-trivial curvature data needs to be provided, i.e., edges that correspond to linear elements, since they have no curvature, will have no entry.
+The formatting for the curvature data is provided in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab:midside</span></code>.</p>
+<blockquote>
+<div><span id="tab-midside"></span><table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Curvature information specification</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">IEDGE</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">IEL</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">CURVE(1)</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">CURVE(2)</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">CURVE(3)</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">CURVE(4)</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">CURVE(5)</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">CCURVE</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>2</p></td>
+<td><p>0.125713</p></td>
+<td><p>-0.992067</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>38</p></td>
+<td><p>0.125713</p></td>
+<td><p>-0.992067</p></td>
+<td><p>3.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>40</p></td>
+<td><p>1.00000</p></td>
+<td><p>0.000000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>C</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>There are several types of possible curvature information represented by <code class="docutils literal notranslate"><span class="pre">CCURVE</span></code>. This include:</p>
+<ul class="simple">
+<li><p>‘C’ stands for circle and is given by the radius of the circle,  in <code class="docutils literal notranslate"><span class="pre">CURVE(1)</span></code>, all other compoentns of the <code class="docutils literal notranslate"><span class="pre">CURVE</span></code> array are not used but need to be present.</p></li>
+<li><p>‘s’ stands for sphere and is given by the radius and the center of the sphere, thus filling the first 4 components of the <code class="docutils literal notranslate"><span class="pre">CURVE</span></code> array. The fifth component needs to be present but is not utilized.</p></li>
+<li><p>‘m’ is given by the coordinates of the midside-node, thus using the first 3 components of the <code class="docutils literal notranslate"><span class="pre">CURVE</span></code> array, and leads to a second order reconstruction of the face.  The fourth and fifth components need to be present but are not utilized.</p></li>
+</ul>
+<p>Both ‘C’ and ‘s’ types allow for a surface of as high order as the polynomial used in the spectral method, since they have an underlying analytical description, any circle arc can be fully determined by the radius and end points. However for the ‘m’ curved element descriptor the surface can be reconstructed only up to second order. This can be later updated to match the high-order polynomial after the GLL points have been distributed across the boundaries. This is the only general mean to describe curvature currrently in Nek5000 and corresponds to a HEX20 representation.</p>
+<blockquote>
+<div><figure class="align-center" id="id15">
+<span id="fig-edges"></span><img alt="edge-numbering" src="../../_images/3dcube.png" />
+<figcaption>
+<p><span class="caption-text">Edge numbering in <code class="docutils literal notranslate"><span class="pre">.rea</span></code> file, the edge number is in between parenthesis. The other
+numbers represent vertices.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<figure class="align-center" id="id16">
+<span id="fig-ex2"></span><img alt="edge-numbering" src="../../_images/modified1.png" />
+<figcaption>
+<p><span class="caption-text">Example mesh - with curvature. Circular dots represent example midsize points.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</section>
+<section id="boundaries">
+<h3>Boundaries<a class="headerlink" href="#boundaries" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p>Boundaries are specified for each field in sequence: velocity, temperature and passive scalars. The section header for each field will be as follows (example for the velocity):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*****</span> <span class="n">FLUID</span>   <span class="n">BOUNDARY</span> <span class="n">CONDITIONS</span> <span class="o">*****</span>
+</pre></div>
+</div>
+<p>and the data is stored as illustarted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab:bcs</span></code>. For each field boundary conditions are listed for each face of each element.</p>
+<p>Boundary conditions are given in order per each element, see <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab:bcs</span></code> column <code class="docutils literal notranslate"><span class="pre">IEL</span></code>, and faces listed in ascending order 1-6 in column <code class="docutils literal notranslate"><span class="pre">IFACE</span></code>. Note that the header in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab:bcs</span></code> does not appear in the actual <code class="docutils literal notranslate"><span class="pre">.rea</span></code>.</p>
+<p>The ordering for faces each element is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:forder</span></code>. A total equivalent to <span class="math notranslate nohighlight">\(6N_{field}\)</span> boundary conditions are listed for each field, where <span class="math notranslate nohighlight">\(N_{field}\)</span> is the number of elements for the specific field. <span class="math notranslate nohighlight">\(N_{field}\)</span> is equal to the total number of fluid elements for the velocity and equal to the total number of elements (including solid elements) for temperature. For the passive scalars it will depend on the specific choice, but typically scalars are solved on the temeprature mesh (solid+fluid).</p>
+<blockquote>
+<div><figure class="align-center" id="id17">
+<span id="fig-forder"></span><img alt="edge-numbering" src="../../_images/3dcube_2.png" />
+<figcaption>
+<p><span class="caption-text">Face ordering for each element.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<p>Each BC letter condition is formed by three characters. Common BCs include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code> - internal boundary condition. No additional information needs to be provided.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SYM</span></code> - symmetry boundary condition. No additional information needs to be provided.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code> - periodic boundary conditions,  which indicates that an element face is connected to another element to establish a periodic BC. The connecting element and face need be  to specified in <code class="docutils literal notranslate"><span class="pre">CONN-IEL</span></code> and <code class="docutils literal notranslate"><span class="pre">CONN-IFACE</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">v</span></code> - imposed velocity boundary conditions (inlet). The value is specified in the user subroutines. No additional information needs to be provided in the <code class="docutils literal notranslate"><span class="pre">.rea</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">W</span></code> - wall boundary condition (no-slip) for the velocity. No additional information needs to be provided.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">O</span></code> - outlet boundary condition (velocity). No additional information needs to be provided.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> - imposed temperature  boundary conditions (inlet). The value is specified in the user subroutines. No additional information needs to be provided in the <code class="docutils literal notranslate"><span class="pre">.rea</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> - imposed heat flux  boundary conditions (temperature). The value is specified in the user subroutines. No additional information needs to be provided in the <code class="docutils literal notranslate"><span class="pre">.rea</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code> - adiabatic boundary conditions (temeperature). No additional information needs to be provided.</p></li>
+</ul>
+<p>Many of the BCs support either a constant specification or a user defined specification which may be an arbitrary function.   For example, a constant Dirichlet BC for velocity is specified by <code class="docutils literal notranslate"><span class="pre">V</span></code>, while a user defined BC is specified by <code class="docutils literal notranslate"><span class="pre">v</span></code>.   This upper/lower-case distinction is  used for all cases.   There are about 70 different types of boundary conditions in all, including free-surface, moving boundary, heat flux, convective cooling, etc. The above cases are just the most used types.</p>
+<blockquote>
+<div><span id="tab-bcs"></span><table class="docutils align-default" id="id18">
+<caption><span class="caption-text">Formatting of boundary conditions input.</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">CBC</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">IEL</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">IFACE</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">CONN-IEL</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">CONN-IFACE</span></code></p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>4.00000</p></td>
+<td><p>3.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>W</p></td>
+<td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>P</p></td>
+<td><p>23</p></td>
+<td><p>5</p></td>
+<td><p>149.000</p></td>
+<td><p>6.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+<td><p>0.00000</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+</section>
+</section>
+<section id="user-routines-file-usr">
+<span id="case-files-usr"></span><h2>User Routines File (.usr)<a class="headerlink" href="#user-routines-file-usr" title="Permalink to this heading">¶</a></h2>
+<p>This file implements the the user interface to Nek5000. What follows is a brief description of the available
+subroutines.</p>
+<section id="uservp">
+<span id="case-files-uservp"></span><h3>uservp<a class="headerlink" href="#uservp" title="Permalink to this heading">¶</a></h3>
+<p>This function can be used  to specify customized or solution dependent material
+properties.</p>
+<p>Example:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ifield</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">   </span><span class="n">udiff</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">*</span><span class="n">temp</span><span class="p">)</span><span class="w"> </span><span class="c">! dynamic viscosity</span>
+<span class="w">   </span><span class="n">utrans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w">              </span><span class="c">! density</span>
+<span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">ifield</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">   </span><span class="n">udiff</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w">              </span><span class="c">! conductivity</span>
+<span class="w">   </span><span class="n">utrans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w">              </span><span class="c">! rho*cp</span>
+<span class="k">endif</span>
+</pre></div>
+</div>
+</section>
+<section id="userf">
+<h3>userf<a class="headerlink" href="#userf" title="Permalink to this heading">¶</a></h3>
+<p>This functions sets the source term (which will be subsequently be multiplied by
+the density) for the momentum equation.</p>
+<p>Example:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">parameter</span><span class="p">(</span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.81</span><span class="p">)</span>
+
+<span class="n">ffx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="n">ffy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="n">ffz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="c">! gravitational acceleration</span>
+</pre></div>
+</div>
+</section>
+<section id="userq">
+<h3>userq<a class="headerlink" href="#userq" title="Permalink to this heading">¶</a></h3>
+<p>This functions sets the source term for the energy (temperature) and passive scalar equations.</p>
+</section>
+<section id="userbc">
+<h3>userbc<a class="headerlink" href="#userbc" title="Permalink to this heading">¶</a></h3>
+<p>This functions sets boundary conditions. Note, this function is only called
+for special boundary condition types and only for points on the boundary surface.</p>
+</section>
+<section id="useric">
+<h3>useric<a class="headerlink" href="#useric" title="Permalink to this heading">¶</a></h3>
+<p>This functions sets the initial conditions.</p>
+</section>
+<section id="userchk">
+<h3>userchk<a class="headerlink" href="#userchk" title="Permalink to this heading">¶</a></h3>
+<p>This is a general purpose function that gets executed before the time stepper and after every time
+step.</p>
+</section>
+<section id="userqtl">
+<h3>userqtl<a class="headerlink" href="#userqtl" title="Permalink to this heading">¶</a></h3>
+<p>This function can be used  to specify a cutomzized thermal diveregence for the low Mach solver.
+step.</p>
+</section>
+<section id="usrdat">
+<h3>usrdat<a class="headerlink" href="#usrdat" title="Permalink to this heading">¶</a></h3>
+<p>This function can be used to modify the element vertices and is called before the spectral element mesh (GLL points) has been laid out.</p>
+</section>
+<section id="usrdat2">
+<h3>usrdat2<a class="headerlink" href="#usrdat2" title="Permalink to this heading">¶</a></h3>
+<p>This function can be used to modify the spectral element mesh.
+The geometry information (mass matrix, surface normals, etc.) will be rebuilt after this routine is called.</p>
+</section>
+<section id="usrdat3">
+<h3>usrdat3<a class="headerlink" href="#usrdat3" title="Permalink to this heading">¶</a></h3>
+<p>This function can be used to initialize case/user specific data.</p>
+</section>
+</section>
+<section id="size">
+<span id="case-files-size"></span><h2>SIZE<a class="headerlink" href="#size" title="Permalink to this heading">¶</a></h2>
+<p>SIZE file defines the problem size, i.e. spatial points at which the solution is to be evaluated within each element, number of elements per processor etc.
+The SIZE file governs the memory allocation for most of the arrays
+in Nek5000, with the exception of those required by the C utilities.
+The <em>basic</em> parameters of interest in SIZE are:</p>
+<ul class="simple">
+<li><p><strong>ldim</strong> = 2 or 3.  This must be set to 2 for two-dimensional or axisymmetric simulations  (the latter only partially supported) or to 3 for three-dimensional simulations.</p></li>
+<li><p><strong>lx1</strong> controls the polynomial order of the solution, <span class="math notranslate nohighlight">\(N = {\tt lx1-1}\)</span>.</p></li>
+<li><p><strong>lxd</strong> controls the polynomial order of the (over-)integration/dealiasing. Strictly speaking <span class="math notranslate nohighlight">\({\tt lxd=3 * lx1/2}\)</span> is required but often smaller values are good enough.</p></li>
+<li><p><strong>lx2</strong> = <code class="docutils literal notranslate"><span class="pre">lx1</span></code> or <code class="docutils literal notranslate"><span class="pre">lx1-2</span></code> and is an approximation order for pressure that determines the formulation for the Navier-Stokes  solver (i.e., the choice between the <span class="math notranslate nohighlight">\(\mathbb{P}_N - \mathbb{P}_N\)</span> or <span class="math notranslate nohighlight">\(\mathbb{P}_N - \mathbb{P}_{N-2}\)</span> spectral-element methods).</p></li>
+<li><p><strong>lelg</strong>, an upper bound on the total number of elements in your mesh.</p></li>
+<li><p><strong>lpmax</strong>, a maximum number of processors that can be used</p></li>
+<li><p><strong>lpmin</strong>, a minimum number of processors that can be used (see also  <strong>Memory Requirements</strong>).</p></li>
+<li><p><strong>ldimt</strong>, an upper bound on a number of auxilary fields to solve (temperature + other scalars, minimum is 1).</p></li>
+</ul>
+<p>The <em>optional</em>
+upper bounds on parameters in SIZE are (minimum being 1 unless otherwise noted):</p>
+<ul class="simple">
+<li><p><strong>lhis</strong>, a maximum history (i.e. monitoring) points.</p></li>
+<li><p><strong>maxobj</strong>, a maximum number of objects.</p></li>
+<li><p><strong>lpert</strong>, a maximum perturbations.</p></li>
+<li><p><strong>toteq</strong>, a maximum number of conserved scalars in CMT (minimum could be 0).</p></li>
+<li><p><strong>nsessmax</strong>, a maximum number of (ensemble-average) sessions.</p></li>
+<li><p><strong>lxo</strong>, a maximum number of points per element for field file output (<span class="math notranslate nohighlight">\({\tt lxo \geq lx1}\)</span>).</p></li>
+<li><p><strong>lelx</strong>, <strong>lely</strong>, <strong>lelz</strong>, a maximum number of element in each direction for global tensor product solver and/or dimentions.</p></li>
+<li><p><strong>mxprev</strong>, a maximum dimension of projection space (e.g. 20).</p></li>
+<li><p><strong>lgmres</strong>, a maximum dimension of Krylov space (e.g. 30).</p></li>
+<li><p><strong>lorder</strong>, a maximum order of temporal discretization (minimum is2 see also characteristic/OIFS method).</p></li>
+<li><p><strong>lelt</strong> determines the maximum number of elements <em>per processor</em> (should be not smaller than nelgt/lpmin, e.g. lelg/lpmin+1).</p></li>
+<li><p><strong>lx1m</strong>, a polynomial order for mesh solver that should be equal to lx1 in case of ALE and in case of stress-formulation (=1 otherwise).</p></li>
+<li><p><strong>lbelt</strong> determines the maximum number of elements per processor for MHD solver that should be equalt to lelt (=1 otherwise).</p></li>
+<li><p><strong>lpelt</strong> determines the maximum number of elements per processor for linear stability solver that should be equalt to lelt (=1 otherwise).</p></li>
+<li><p><strong>lcvelt</strong> determines the maximum number of elements per processor for CVODE solver that should be equalt to lelt (=1 otherwise).</p></li>
+<li><p><strong>lfdm</strong> equals to 1 for global tensor product solver (that uses fast diagonalization method) being 0 otherwise.</p></li>
+</ul>
+<p>Note that one also need to include the following line to SIZE file:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">include</span><span class="w"> </span><span class="s1">&#39;SIZE.inc&#39;</span>
+</pre></div>
+</div>
+<p>that defines addional internal parameters.</p>
+</section>
+<section id="mesh-partitioning-file-map-ma2">
+<span id="case-files-ma2"></span><h2>Mesh Partitioning File (.map/.ma2)<a class="headerlink" href="#mesh-partitioning-file-map-ma2" title="Permalink to this heading">¶</a></h2>
+<p>TODO: Add more details</p>
+</section>
+<section id="restart-output-files-f">
+<span id="case-files-fld"></span><h2>Restart/Output files (.f#####)<a class="headerlink" href="#restart-output-files-f" title="Permalink to this heading">¶</a></h2>
+<p>Field files are used to read/write physical fields in both serial and parallel.  They have extension <code class="docutils literal notranslate"><span class="pre">.f#####</span></code>
+where # is a numeral. The file format is unique to Nek5000 and is described in this section.</p>
+<p>The file is composed of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Header</p></li>
+<li><p>Global element IDs, coordinates, and field data</p></li>
+<li><p>Metadata</p></li>
+</ul>
+</div></blockquote>
+<p>The <strong>header</strong> provides information about the types, sizes, and layout of the field data.
+The header is a fixed size of 132 bytes.  Its data elements are encoded as either ASCII or binary values.
+In the table below, the offsets and widths are measured in bytes. Note that consecutive entries are separated
+by a single byte, which is the ASCII space character.  Finally, note that the data entries do not require all 132 bytes.</p>
+<p>Some elements that require additional explanation are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nz</span></code>:  This is the number of GLL gridpoints in the z-direction. If equal to 1, the field data were
+produced for a 2D simulation.  If &gt; 1, the data were produced for a 3D simulation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rdcode</span></code>: Specifies the type and ordering of fields that are present in this file.
+The code can consist of the following.  All fields are optional, but if present, they are expected
+to appear in this order.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code> : Coordinates</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">U</span></code> : Velocity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code> : Pressure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code> : Temperature</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S#</span></code>: Passive scalar(s).  # is a numeral that specifies the number of different passive scalars.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">value</span></code>: When Nek5000 writes the header to file, it writes the specific value 6.54321 as a
+test value.  When the file is later read – possibly on a different computer – the test value is
+read and compared to the expected value.  If the values match, then the computer that wrote the file
+and the computer that is now reading the file use the same endianness for floating-point numbers.
+If not, the computers have different endianness.  In that case, the floating-point data should be
+byte-swapped by the computer reading the data.</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Offset</p></th>
+<th class="head"><p>Width</p></th>
+<th class="head"><p>Encoding</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tag</span></code></p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>ASCII</p></td>
+<td><p>text</p></td>
+<td><p>The string <code class="docutils literal notranslate"><span class="pre">#std</span></code>. Tags the start of the fil</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">wdsize</span></code></p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>ASCII</p></td>
+<td><p>integer</p></td>
+<td><p>Floating-point precision of field data (in bytes)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nx</span></code></p></td>
+<td><p>7</p></td>
+<td><p>2</p></td>
+<td><p>ASCII</p></td>
+<td><p>integer</p></td>
+<td><p>Number of GLL points per element in x direction</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ny</span></code></p></td>
+<td><p>10</p></td>
+<td><p>2</p></td>
+<td><p>ASCII</p></td>
+<td><p>integer</p></td>
+<td><p>Number of GLL points per element in y direction</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nz</span></code></p></td>
+<td><p>13</p></td>
+<td><p>2</p></td>
+<td><p>ASCII</p></td>
+<td><p>integer</p></td>
+<td><p>Number of GLL points per element in z direction</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nelt</span></code></p></td>
+<td><p>16</p></td>
+<td><p>10</p></td>
+<td><p>ASCII</p></td>
+<td><p>integer</p></td>
+<td><p>Number of elements in this file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nelgt</span></code></p></td>
+<td><p>27</p></td>
+<td><p>10</p></td>
+<td><p>ASCII</p></td>
+<td><p>integer</p></td>
+<td><p>Number of global elements</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">time</span></code></p></td>
+<td><p>38</p></td>
+<td><p>20</p></td>
+<td><p>ASCII</p></td>
+<td><p>decimal</p></td>
+<td><p>Absolute simulation time of this file’s state</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">iostep</span></code></p></td>
+<td><p>59</p></td>
+<td><p>9</p></td>
+<td><p>ASCII</p></td>
+<td><p>integer</p></td>
+<td><p>I/O timestep of this file’s state</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fid</span></code></p></td>
+<td><p>69</p></td>
+<td><p>6</p></td>
+<td><p>ASCII</p></td>
+<td><p>integer</p></td>
+<td><p>Index of this file (when using multi-file output)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nfileoo</span></code></p></td>
+<td><p>76</p></td>
+<td><p>6</p></td>
+<td><p>ASCII</p></td>
+<td><p>integer</p></td>
+<td><p>Number of files produced at this I/O step</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rdcode</span></code></p></td>
+<td><p>83</p></td>
+<td><p>10</p></td>
+<td><p>ASCII</p></td>
+<td><p>text</p></td>
+<td><p>Specifies which fields contained in this file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">p0th</span></code></p></td>
+<td><p>94</p></td>
+<td><p>15</p></td>
+<td><p>ASCII</p></td>
+<td><p>decimal</p></td>
+<td><p>Thermodynamic pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">if_press_mesh</span></code></p></td>
+<td><p>110</p></td>
+<td><p>1</p></td>
+<td><p>ASCII</p></td>
+<td><p>text</p></td>
+<td><p>States whether pressure mesh is being used</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">test_value</span></code></p></td>
+<td><p>112</p></td>
+<td><p>4</p></td>
+<td><p>binary</p></td>
+<td><p>32-bit float</p></td>
+<td><p>The decimal 6.54321.  Used to test endianness.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>global element IDs, coordinates, and field data</strong> start at offset 136 bytes.  Integer data are always 32-bit.
+The precision of floating-point data is inferred from the value of <code class="docutils literal notranslate"><span class="pre">wdsize</span></code> (see above).  The number of
+dimensions (<code class="docutils literal notranslate"><span class="pre">ndims</span></code>) is inferred from <code class="docutils literal notranslate"><span class="pre">nz</span></code> (see above).  The global element IDs are required, but the
+coordinates and any field data are optional.  Their presence of coordinates and field data are inferred from
+<code class="docutils literal notranslate"><span class="pre">rdcode</span></code>, as described above.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Shape</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Global element IDs</p></td>
+<td><p>integer</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(nelt)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Coordinates</p></td>
+<td><p>float</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(nelt,</span> <span class="pre">ndims,</span> <span class="pre">nx</span> <span class="pre">*</span> <span class="pre">ny</span> <span class="pre">*</span> <span class="pre">nz)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Velocity</p></td>
+<td><p>float</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(nelt,</span> <span class="pre">ndims,</span> <span class="pre">nx</span> <span class="pre">*</span> <span class="pre">ny</span> <span class="pre">*</span> <span class="pre">nz)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Pressure</p></td>
+<td><p>float</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(nelt,</span> <span class="pre">nx</span> <span class="pre">*</span> <span class="pre">ny</span> <span class="pre">*</span> <span class="pre">nz)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Temperature</p></td>
+<td><p>float</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(nelt,</span> <span class="pre">nx</span> <span class="pre">*</span> <span class="pre">ny</span> <span class="pre">*</span> <span class="pre">nz)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Passive scalars</p></td>
+<td><p>float</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(nscalars,</span> <span class="pre">nelt,</span> <span class="pre">nx</span> <span class="pre">*</span> <span class="pre">ny</span> <span class="pre">*</span> <span class="pre">nz)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>TODO: Describe metadata</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, Ricardo Frantz
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: main
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/en/main/">en</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/nekStabDoc/es/main/">es</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/en/main/">main</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/nekStabDoc/en/main/nekStab-docs_en_main.pdf">pdf</a></dd>
+        
+          <dd><a href="/nekStabDoc/en/main/nekStab-docs_en_main.epub">epub</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

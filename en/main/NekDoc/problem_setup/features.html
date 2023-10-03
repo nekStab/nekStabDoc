@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Additional Features &mdash; nekStab 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> nekStab
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                main
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parameters.html">Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../adapting.html">Adapting your case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../adapting.html#programming-best-practices">Programming best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sourcecode.html">Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_log.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev_log.html#changelog-on-nek5000">Changelog on Nek5000</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">nekStab</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Additional Features</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/ricardofrantz/nekStabDoc/blob/master/docs/NekDoc/problem_setup/features.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="additional-features">
+<h1>Additional Features<a class="headerlink" href="#additional-features" title="Permalink to this heading">¶</a></h1>
+<p>Nek5000 includes several features which make case setup, running, and data processing much easier.
+These capabilities are outlined here.</p>
+<section id="history-points">
+<span id="features-his"></span><h2>History Points<a class="headerlink" href="#history-points" title="Permalink to this heading">¶</a></h2>
+<p>Assuming a case named <code class="docutils literal notranslate"><span class="pre">foo</span></code>, a list of monitor points can be defined in the file <code class="docutils literal notranslate"><span class="pre">foo.his</span></code> to evaluate velocity, temperature, pressure and passive scalars.
+Values for each scalar will be spectrally interpolated to each point and appended to this file each time the subroutine <code class="docutils literal notranslate"><span class="pre">hpts()</span></code> is called.
+The values printed to this file are controlled by the <code class="docutils literal notranslate"><span class="pre">writeToFieldFile</span></code> parameters for each quantity in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file.
+Depending on the number of monitoring points, you may need to increase parameter <code class="docutils literal notranslate"><span class="pre">lhis</span></code> in SIZE.
+Note that the monitoring points are assumed to be distributed among MPI ranks, so it may be necessary to increase <code class="docutils literal notranslate"><span class="pre">lhis</span></code> above the actual number of history points requested.</p>
+<p>Usage example:</p>
+<ul>
+<li><p>setup an ASCII file called <code class="docutils literal notranslate"><span class="pre">foo.his</span></code>, e.g.:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>3 !number of monitoring points
+1.1 -1.2 1.0
+. . .
+x y z
+</pre></div>
+</div>
+</li>
+<li><p>add <code class="docutils literal notranslate"><span class="pre">call</span> <span class="pre">hpts()</span></code> to <code class="docutils literal notranslate"><span class="pre">userchk()</span></code></p></li>
+</ul>
+</section>
+<section id="grid-to-grid-interpolation">
+<h2>Grid-to-Grid Interpolation<a class="headerlink" href="#grid-to-grid-interpolation" title="Permalink to this heading">¶</a></h2>
+<p id="features-gfldr">Nek includes the capability to transfer a solution from one mesh to an entirely different mesh.
+This allows a user to restart from an existing field file with a new mesh.
+This is accomplished by calling the generic field reader which will spectrally interpolate a result file from a previous case.
+To use this feature, add a call to the <code class="docutils literal notranslate"><span class="pre">gfldr</span></code> subroutine in <code class="docutils literal notranslate"><span class="pre">userchk</span></code> in the user routines file.
+For example, to interpolate a result from case <code class="docutils literal notranslate"><span class="pre">foo</span></code>:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">istep</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">gfldr</span><span class="p">(</span><span class="s2">&quot;foo0.f00001&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">foo0.f00001</span></code> must include the coordinates, i.e. it must have been created from a run with <code class="docutils literal notranslate"><span class="pre">writeToFieldFile</span> <span class="pre">=</span> <span class="pre">yes</span></code> in the <code class="docutils literal notranslate"><span class="pre">[MESH]</span></code> section of the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file and that selection of specific fields to read is not currently supported.
+That means all fields included in <code class="docutils literal notranslate"><span class="pre">foo.f00001</span></code> will be overwritten.</p>
+</section>
+<section id="averaging">
+<h2>Averaging<a class="headerlink" href="#averaging" title="Permalink to this heading">¶</a></h2>
+<span class="target" id="features-avg"></span><p>TODO…</p>
+</section>
+<section id="filtering">
+<h2>Filtering<a class="headerlink" href="#filtering" title="Permalink to this heading">¶</a></h2>
+<p id="features-filt">TODO…</p>
+</section>
+<section id="objects">
+<h2>Objects<a class="headerlink" href="#objects" title="Permalink to this heading">¶</a></h2>
+<p id="features-obj">TODO…</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, Ricardo Frantz
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: main
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/en/main/">en</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/nekStabDoc/es/main/">es</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/en/main/">main</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/nekStabDoc/en/main/nekStab-docs_en_main.pdf">pdf</a></dd>
+        
+          <dd><a href="/nekStabDoc/en/main/nekStab-docs_en_main.epub">epub</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

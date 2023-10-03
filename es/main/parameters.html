@@ -1,0 +1,507 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Parameters &mdash; documentación de nekStab - 1.0.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Adapting your case" href="adapting.html" />
+    <link rel="prev" title="Installing and running" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> nekStab
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                main
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing and running</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Parameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#current-form-of-input-via-uparams">Current form of input via uparams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#future-update-via-parser">Future update via parser</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stability-file-pars">Stability File (.pars)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="adapting.html">Adapting your case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapting.html#programming-best-practices">Programming best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sourcecode.html">Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_log.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_log.html#changelog-on-nek5000">Changelog on Nek5000</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">nekStab</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Parameters</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/ricardofrantz/nekStabDoc/blob/master/docs/parameters.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="parameters">
+<h1>Parameters<a class="headerlink" href="#parameters" title="Enlace permanente a este encabezado">¶</a></h1>
+<section id="current-form-of-input-via-uparams">
+<h2>Current form of input via uparams<a class="headerlink" href="#current-form-of-input-via-uparams" title="Enlace permanente a este encabezado">¶</a></h2>
+<ul>
+<li><p>uparam(1) = computation mode</p>
+<blockquote>
+<div><p>0: DNS,
+1:stabilization,
+3   :  stability with direct,
+3.2:stability with adjoint,
+3.3:stability with transientGrowth</p>
+</div></blockquote>
+</li>
+<li><p>uparam(2) = restart vector for stability (optional)</p></li>
+<li><p>uparam(3) = stabilzation technique (1:SFD)</p></li>
+<li><p>uparam(4) = target mode estimated Strouhal</p></li>
+<li><p>uparam(5) = target mode estimated growth rate</p></li>
+<li><p>uparam(6) =</p></li>
+<li><p>uparam(7) =</p></li>
+<li><p>uparam(8) = sponge side left length (e.g. 1)</p></li>
+<li><p>uparam(9) = sponge side right length (e.g. 5)</p></li>
+<li><p>uparam(10) = sponge strenght (&gt;0 to activate e.g. 1.7)</p></li>
+</ul>
+</section>
+<section id="future-update-via-parser">
+<h2>Future update via parser<a class="headerlink" href="#future-update-via-parser" title="Enlace permanente a este encabezado">¶</a></h2>
+<section id="stability-file-pars">
+<h3>Stability File (.pars)<a class="headerlink" href="#stability-file-pars" title="Enlace permanente a este encabezado">¶</a></h3>
+<span id="tab-stabparams"></span><table class="docutils align-default" id="id8">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">STABILITY</span></code> keys in the <code class="docutils literal notranslate"><span class="pre">.par</span></code> file</span><a class="headerlink" href="#id8" title="Enlace permanente a esta tabla">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">Key</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">eigenSolver</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(none)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">arnoldi</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Krylov-Schur</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">custom</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Eigenvalue solver</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">evolOperator</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(direct)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">adjoint</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">transientGrowth</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">optimalFrequency</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Evolution operator</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">baseFlow</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(steady)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">mean</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">periodic</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Base flow type</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id1"><span class="problematic" id="id2">``</span></a>forcing` `</p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(none)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">prescribed</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">reynoldsStess</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">loadFromFile</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Optional forcing for evolOperator</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">baseFlow</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">usric</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">loadFromFile</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">periodic</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Base flow source</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">inSeed</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">noise</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">symmetric</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">loadFromFile</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Initial seed</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">krylovDimension</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;int&gt;</span></code></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Krylov-space dimension
+kdim &lt;= kdimmax</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SchurTarget</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;int&gt;</span></code></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Convergence target for Krylov-Schur</div>
+<div class="line">schur_tgt &lt; kdim</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SchurDelta</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(0.1)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Selection criteria for Krylov-Schur</div>
+<div class="line">schur_del &gt; 0</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">eigenTol</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(1e-6)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Eigenvalue tolerance</div>
+<div class="line">eigen_tol &gt; 0</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span id="tab-stabparamsbf"></span><span id="id3"></span><table class="docutils align-default" id="id9">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">BASE_FLOW</span></code> keys in the <code class="docutils literal notranslate"><span class="pre">.pars</span></code> file</span><a class="headerlink" href="#id9" title="Enlace permanente a esta tabla">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><div class="line-block">
+<div class="line">Key</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Value(s)</div>
+</div>
+</th>
+<th class="head"><div class="line-block">
+<div class="line">Description</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">baseFlowType</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(steady)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">periodic</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">mean</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Base flow type</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">baseFlowMethod</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(SFD)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TDF</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">newtown</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">boostCOnv</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Evolution operator</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tolerance</span></code></p></td>
+<td><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">(auto)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;real&gt;</span></code></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="id7"><span id="tab-stabparamsbc"></span><span id="id6"></span><span id="tab-stabparamstdf"></span><span id="id5"></span><span id="tab-stabparamssfd"></span><span id="id4"></span></span></section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="adapting.html" class="btn btn-neutral float-right" title="Adapting your case" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installing and running" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, Ricardo Frantz
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: main
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+          
+          <dd><a href="/nekStabDoc/en/main/">en</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/es/main/">es</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/nekStabDoc/es/main/">main</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/nekStabDoc/es/main/nekStab-docs_es_main.pdf">pdf</a></dd>
+        
+          <dd><a href="/nekStabDoc/es/main/nekStab-docs_es_main.epub">epub</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
