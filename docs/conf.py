@@ -43,28 +43,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
-    'sphinxfortran.fortran_domain',
-    'sphinxfortran.fortran_autodoc',
 ]
-
-## -- Options for Sphinx-Fortran ---------------------------------------------
-
-# List of possible extensions in the case of a directory listing
-fortran_ext = ['f', '.f', '*.f'] #, 'f90', 'F90', 'f95', 'F95']
-# This variable must be set with file pattern, like "*.f90", or a list of them. 
-# It is also possible to specify a directory name; in this case, all files than 
-# have an extension matching those define by the config variable `fortran_ext` are used.
-
-fortran_src = [ os.path.abspath('../core'),  ]
-#fortran_encoding = ["utf8"]
-#fortran_subsection_type = ["rubric"]
-#fortran_subsection_type = ["title"]
-# # "rubric" (default) : use directive rubric (lightweight title in bold).
-# # "title" : uses a conventional title (text with underlining, whose character is defined by u fortran_title_underline).
-# Indentation string or length (default 4). If it is an integer, indicates the number of spaces.
-fortran_indent = 6
-
-## -- END Options for Sphinx-Fortran ---------------------------------------------
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -202,8 +181,6 @@ epub_exclude_files = ['search.html']
 # -- Extension configuration -------------------------------------------------
 
 # add sourcecode to path
-#import sys, os
-#sys.path.insert(0, os.path.abspath('../core'))
 import sys, os
 sys.path.insert(0, os.path.abspath('../src'))
  
